@@ -1,12 +1,16 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+import React from "react";
+import ReactDOM from "react-dom";
+import "./index.css";
+import App from "./App";
+import { IData } from "./Interfaces/IData";
 
-ReactDOM.render(<App />, document.getElementById('root'));
+const data: IData[] = [
+  { id: 1, label: "Brush teeth", important: true, done: true },
+  { id: 2, label: "Drink coffee", important: false, done: true },
+  { id: 3, label: "Play  games", important: true, done: false },
+  { id: 4, label: "Clean carpet", important: false, done: false },
+  { id: 5, label: "Throw out rubbish", important: false, done: false },
+  { id: 6, label: "Go chillin", important: true, done: false }
+];
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+ReactDOM.render(<App toDo={data} />, document.getElementById("root"));
